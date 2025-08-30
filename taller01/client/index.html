@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Reservar cita | Taller de Autos Multimarca</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <h1>Reserva tu cita | Taller de Autos Multimarca</h1>
-    <form id="formAppointment" method="POST">
+        <form id="formAppointment" method="POST">
         <label>Nombre:</label>
         <input type="text" name="customerName" maxlength="20" required><br>
 
@@ -17,7 +18,7 @@
         <input type="text" name="cellphone" maxlength="10" required><br>
 
         <label>Email:</label>
-        <input type="email" name="email" maxlength="50"><br>
+        <input type="email" name="email" maxlength="50" required><br>
 
         <label>Modelo del auto:</label>
         <select name="carModel" required>
@@ -42,7 +43,7 @@
         <input type="time" name="time" required><br>
 
         <label>Servicio:</label>
-        <select name="service">
+        <select name="service" required>
             <option value="oilChange">Cambio de Aceite</option>
             <option value="alingmentAndBalancing">Alineación y balanceo</option>
             <option value="generalReview">Revisión general</option>
@@ -51,7 +52,6 @@
 
         <button type="submit">Reservar</button>
     </form>
-
 </body>
 
 </html>
