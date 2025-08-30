@@ -1,6 +1,57 @@
 <!DOCTYPE html>
-<html>
-    <body>
-        <h1>Hola!!</h1>
-    </body>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Reservar cita | Taller de Autos Multimarca</title>
+</head>
+
+<body>
+    <h1>Reserva tu cita | Taller de Autos Multimarca</h1>
+    <form id="formAppointment" method="POST">
+        <label>Nombre:</label>
+        <input type="text" name="customerName" maxlength="20" required><br>
+
+
+        <label>Celular:</label>
+        <input type="text" name="cellphone" maxlength="10" required><br>
+
+        <label>Email:</label>
+        <input type="email" name="email" maxlength="50"><br>
+
+        <label>Modelo del auto:</label>
+        <select name="carModel" required>
+            <option value="">-- Selecciona un modelo --</option>
+            <option value="volkswagenGol">Volkswagen Gol</option>
+            <option value="mazda3">Mazda 3</option>
+            <option value="toyotaCorolla">Toyota Corolla</option>
+            <option value="chevroletSpark">Chevrolet Spark</option>
+            <option value="nissanVersa">Nissan Versa</option>
+            <option value="fordFiesta">Ford Fiesta</option>
+            <option value="renaultDuster">Renault Duster</option>
+            <option value="kiaSportage">Kia Sportage</option>
+        </select><br>
+
+        <label>Placa:</label>
+        <input type="text" name="licensePlate" maxlength="6" required><br>
+
+        <label>Fecha de la cita:</label>
+        <input type="date" name="date" required><br>
+
+        <label>Hora de la cita:</label>
+        <input type="time" name="time" required><br>
+
+        <label>Servicio:</label>
+        <select name="service">
+            <option value="oilChange">Cambio de Aceite</option>
+            <option value="alingmentAndBalancing">Alineación y balanceo</option>
+            <option value="generalReview">Revisión general</option>
+            <option value="brakeInspection">Revisión de frenos</option>
+        </select><br>
+
+        <button type="submit">Reservar</button>
+    </form>
+
+</body>
+
 </html>
