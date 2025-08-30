@@ -5,20 +5,46 @@
     <meta charset="UTF-8">
     <title>Reservar cita | Taller de Autos Multimarca</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 
 <body>
     <h1>Reserva tu cita | Taller de Autos Multimarca</h1>
-        <form id="formAppointment" method="POST">
+    <form id="formAppointment" action="../server/scheduleAppointment.php" method="POST">
         <label>Nombre:</label>
-        <input type="text" name="customerName" maxlength="20" required><br>
-
+        <input
+            type="text"
+            name="customerName"
+            minlength="3"
+            maxlength="50"
+            required
+            oninput="this.setCustomValidity('')"
+            oninvalid="this.setCustomValidity('Por favor ingresa un nombre válido.')"
+        >
+        <br>
 
         <label>Celular:</label>
-        <input type="text" name="cellphone" maxlength="10" required><br>
+        <input
+            type="tel"
+            name="cellphone"
+            maxlength="10"
+            pattern="\d{10}"
+            required
+            oninput="this.value = this.value.replace(/[^0-9]/g, ''); this.setCustomValidity('')"
+            oninvalid="this.setCustomValidity('Por favor ingresa un número de teléfono válido de 10 dígitos.')"
+        >
+        <br>
 
         <label>Email:</label>
-        <input type="email" name="email" maxlength="50" required><br>
+        <input
+            type="email"
+            name="email"
+            maxlength="50"
+            required
+            oninput="this.setCustomValidity('')"
+            oninvalid="this.setCustomValidity('Por favor ingresa un correo electrónico válido.')"
+        >
+        <br>
 
         <label>Modelo del auto:</label>
         <select name="carModel" required>
@@ -34,16 +60,48 @@
         </select><br>
 
         <label>Placa:</label>
-        <input type="text" name="licensePlate" maxlength="6" required><br>
+        <input
+            type="text"
+            name="licensePlate"
+            minlength="6"
+            maxlength="6"
+            required
+            oninput="this.value = this.value.toUpperCase(); this.setCustomValidity('')"
+            oninvalid="this.setCustomValidity('Por favor ingresa una placa válida')"
+        >
+        <br>
 
         <label>Fecha de la cita:</label>
-        <input type="date" name="date" required><br>
+        <input
+            type="date"
+            id="date"
+            name="date"
+            required
+            oninput="this.setCustomValidity('')"
+            oninvalid="this.setCustomValidity('Por favor selecciona una fecha')"
+        >
+        <br>
 
         <label>Hora de la cita:</label>
-        <input type="time" name="time" required><br>
+        <select
+            id="time"
+            name="time"
+            required
+            oninput="this.setCustomValidity('')"
+            oninvalid="this.setCustomValidity('Por favor seleccione una hora')"
+        >
+            <option value="">-- Selecciona una hora --</option>
+        </select>
+        <br>
 
         <label>Servicio:</label>
-        <select name="service" required>
+        <select
+            name="service"
+            required
+            oninput="this.setCustomValidity('')"
+            oninvalid="this.setCustomValidity('Por favor seleccione un servicio')"
+        >
+            <option value="">-- Selecciona un servicio --</option>
             <option value="oilChange">Cambio de Aceite</option>
             <option value="alingmentAndBalancing">Alineación y balanceo</option>
             <option value="generalReview">Revisión general</option>
